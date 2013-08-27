@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="StablexDLBunnyMark" package="StablexDLBunnyMark" version="1.0.0" company="AS3Boyan" />
+	
+	<!-- output -->
+	<haxedef name="thread" />
+	
+	<app main="BunnyMark" file="StablexDLBunnyMark" />
+	<app path="bin" unless="thread" />
+	<app path="bin/thread" if="thread" />
+	
+	<window background="#CCCCCC" fps="65" />
+	<window width="480" height="640" unless="mobile" />
+	<window orientation="portrait" vsync="false" antialiasing="0" resizable="true" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+
+	<haxelib name="stablexdl" />
+	
+	<!-- assets -->
+	<icon path="assets/openfl.svg" />
+	<assets path="assets/img" rename="img" />
+	
+	<haxeflag name="-dce std" />
+	
+</project>
